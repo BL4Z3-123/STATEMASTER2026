@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulation Politique</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulation Politique</h1>
+
+<div class="stats">
+
+    <div class="stat">
+        <span>💰 Économie</span>
+        <div class="bar">
+            <div id="ecoBar" class="fill"></div>
+        </div>
+    </div>
+
+    <div class="stat">
+        <span>😊 Popularité</span>
+        <div class="bar">
+            <div id="popBar" class="fill"></div>
+        </div>
+    </div>
+
+    <div class="stat">
+        <span>🪖 Armée</span>
+        <div class="bar">
+            <div id="milBar" class="fill"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="actions">
+
+    <button onclick="openMenu()">📜 Décisions politiques</button>
+
+</div>
+
+<div id="menu" class="menu hidden">
+
+    <h3>Choisissez une décision</h3>
+
+    <button onclick="choosePolicy('tax')">
+        💰 Augmenter les taxes (+💰 / -😊)
+    </button>
+
+    <button onclick="choosePolicy('education')">
+        🎓 Investir en éducation (-💰 / +😊 long terme)
+    </button>
+
+    <button onclick="choosePolicy('military')">
+        🪖 Augmenter budget militaire (+🪖 / -💰)
+    </button>
+
+    <button onclick="choosePolicy('nothing')">
+        ⏸️ Ne rien faire
+    </button>
+
+</div>
+
+    <button class="next" onclick="nextTurn()">➡️ Tour suivant</button>
+
+    <div class="log" id="log"></div>
+</div>
+
+<div id="regions"></div>
+
+<div id="gameOverScreen" class="hidden">
+    <h2>Game Over</h2>
+    <button onclick="resetGame()">🔁 Restart</button>
+</div>
+
+
+<script type="module" src="game.js"></script>
+</body>
+</html>
